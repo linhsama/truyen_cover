@@ -56,16 +56,14 @@ $top = 0;
                 <a href="#" onclick="return false">
                     <div class="manga-thumbnail">
                         <img src="<?= $truyen__Get_By_Id->truyen_anh_bia ?>">
-                        <span
-                            class="manga-note background-2"><?= $cm->getTimeAgo($truyen__Get_By_Id->truyen_ngay_dang); ?>
+                        <span class="manga-note background-2"><?= $cm->getTimeAgo($truyen__Get_By_Id->truyen_ngay_dang); ?>
                             <i class="bx bxs-star"></i></span>
                     </div>
                 </a>
                 <div class="manga-truyen-container__chitiet__left">
                     <div class="manga-title color-2"><?= $truyen__Get_By_Id->truyen_ten ?></div>
                     <div class="truyen-container__top">
-                        <a
-                            href="index.php?pages=truyen-xem&truyen_id=<?= $chapter__Get_Firsr_By_Truyen_Id->truyen_id ?>&chapter_id=<?= $chapter__Get_Firsr_By_Truyen_Id->chapter_id ?>&chapter_so=<?= $chapter__Get_Firsr_By_Truyen_Id->chapter_so ?>">
+                        <a href="index.php?pages=truyen-xem&truyen_id=<?= $chapter__Get_Firsr_By_Truyen_Id->truyen_id ?>&chapter_id=<?= $chapter__Get_Firsr_By_Truyen_Id->chapter_id ?>&chapter_so=<?= $chapter__Get_Firsr_By_Truyen_Id->chapter_so ?>">
                             <span class="truyen-note background-4">
                                 Đọc từ đầu
                             </span>
@@ -91,19 +89,15 @@ $top = 0;
                         <div class="truyen-item-container__chitiet__left">
                             <div class="tab-group-1">
                                 <div class="truyen-thich">
-                                    <div class="btn btn-sm color-0 background-7"
-                                        onclick="likeTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
-                                        <i class="bx bx bx-book-heart"></i> Thích (<small
-                                            id="thich-count"><?= $truyen__Get_By_Id->truyen_luot_thich ?></small>)
+                                    <div class="btn btn-sm color-0 background-7" onclick="likeTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
+                                        <i class="bx bx bx-book-heart"></i> Thích (<small id="thich-count"><?= $truyen__Get_By_Id->truyen_luot_thich ?></small>)
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-group-2">
                                 <div class="truyen-theo-doi">
-                                    <div class="btn btn-sm color-0 background-6"
-                                        onclick="followTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
-                                        <i class="bx bx-book-bookmark"></i> Theo dõi (<small
-                                            id="theo-doi-count"><?= $truyen__Get_By_Id->truyen_luot_theo_doi ?></small>)
+                                    <div class="btn btn-sm color-0 background-6" onclick="followTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
+                                        <i class="bx bx-book-bookmark"></i> Theo dõi (<small id="theo-doi-count"><?= $truyen__Get_By_Id->truyen_luot_theo_doi ?></small>)
                                     </div>
                                 </div>
                             </div>
@@ -118,15 +112,15 @@ $top = 0;
                             ?>
 
                             <?php if (count($truyenTheLoai__Get_By_Truyen_Id) > 0) : ?>
-                            <?php foreach ($truyenTheLoai__Get_By_Truyen_Id as $item) : ?>
-                            <?php
+                                <?php foreach ($truyenTheLoai__Get_By_Truyen_Id as $item) : ?>
+                                    <?php
                                     $itemName = $item->the_loai_ten;
                                     $badgeColor = isset($itemColors[$itemName]) ? $itemColors[$itemName] : 'secondary';
                                     ?>
-                            <span class="badge" style="background-color: <?= $badgeColor ?>;"><?= $itemName ?></span>
-                            <?php endforeach; ?>
+                                    <span class="badge" style="background-color: <?= $badgeColor ?>;"><?= $itemName ?></span>
+                                <?php endforeach; ?>
                             <?php else : ?>
-                            <span class="badge bg-secondary">Không có thể loại</span>
+                                <span class="badge bg-secondary">Không có thể loại</span>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -136,7 +130,7 @@ $top = 0;
 
         <div class="main-container__right">
             <br>
-            <div class="main-item-container__right">
+            <div class="main-item-container__right__text">
                 <?= $truyen__Get_By_Id->truyen_mo_ta ?>
             </div>
         </div>
@@ -157,47 +151,45 @@ $top = 0;
             ?>
 
             <?php if ($previousChapterInfo) : ?>
-            <a href="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $previousChapterInfo->chapter_id ?>&chapter_so=<?= $previousChapter ?>"
-                class="btn btn-sm background-3">
-                <i class="bx bx-left-arrow color-0"></i>
-            </a>
+                <a href="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $previousChapterInfo->chapter_id ?>&chapter_so=<?= $previousChapter ?>" class="btn btn-sm background-3">
+                    <i class="bx bx-left-arrow color-0"></i>
+                </a>
             <?php endif; ?>
 
             <select id="chapterSelect" class="form-select" onchange="location.href = this.value">
                 <?php foreach ($chapter__Get_By_Id_Truyen as $item) : ?>
-                <option
-                    value="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $item->chapter_id ?>&chapter_so=<?= $item->chapter_so ?>"
-                    <?= $item->chapter_so == $chapter_so ? 'selected' : '' ?>>
-                    Chap <?= $item->chapter_so ?>
-                </option>
+                    <option value="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $item->chapter_id ?>&chapter_so=<?= $item->chapter_so ?>" <?= $item->chapter_so == $chapter_so ? 'selected' : '' ?>>
+                        Chap <?= $item->chapter_so ?>
+                    </option>
                 <?php endforeach ?>
             </select>
 
             <?php if ($nextChapterInfo) : ?>
-            <a href="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $nextChapterInfo->chapter_id ?>&chapter_so=<?= $nextChapter ?>"
-                class="btn btn-sm background-3">
-                <i class="bx bx-right-arrow color-0"></i>
-            </a>
+                <a href="index.php?pages=truyen-xem&truyen_id=<?= $truyen_id ?>&chapter_id=<?= $nextChapterInfo->chapter_id ?>&chapter_so=<?= $nextChapter ?>" class="btn btn-sm background-3">
+                    <i class="bx bx-right-arrow color-0"></i>
+                </a>
             <?php endif; ?>
         </div>
     </div>
     <br>
     <div class="main-container-images">
-    <?php if (count($chapterNoiDung__Get_By_Chapter_Id) > 0) : ?>
-        <?php foreach ($chapterNoiDung__Get_By_Chapter_Id as $item) : ?>
-        <img src="<?= $item->chapter_noi_dung_image ?>">
-        <?php endforeach ?>
-        <?php else: ?>
-        <div class="manga-container__comming_soon">
-            <div class="manga-thumbnail">
-                <img src="<?= $truyen__Get_By_Id->truyen_anh_bia ?>">
-                <span class="manga-note background-10">
-                Coming Soon!
-                        </div>
-            <div class="blur"></div>
-            <div class="manga-title color-3">Coming Soon!</div>
+        <div class="main-content-images">
+            <?php if (count($chapterNoiDung__Get_By_Chapter_Id) > 0) : ?>
+                <?php foreach ($chapterNoiDung__Get_By_Chapter_Id as $item) : ?>
+                    <img src="<?= $item->chapter_noi_dung_image ?>">
+                <?php endforeach ?>
+            <?php else : ?>
+                <div class="manga-container__comming_soon">
+                    <div class="manga-thumbnail">
+                        <img src="<?= $truyen__Get_By_Id->truyen_anh_bia ?>">
+                        <span class="manga-note background-10">
+                            Coming Soon!
+                    </div>
+                    <div class="blur"></div>
+                    <div class="manga-title color-3">Coming Soon!</div>
+                </div>
+            <?php endif ?>
         </div>
-        <?php endif ?>
     </div>
 
 </main>
@@ -205,7 +197,7 @@ $top = 0;
 
 
 <script>
-window.addEventListener('load', function() {
-    viewTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>');
-});
+    window.addEventListener('load', function() {
+        viewTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>');
+    });
 </script>
