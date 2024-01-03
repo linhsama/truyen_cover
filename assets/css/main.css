@@ -128,12 +128,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .manga-container {
   position: relative;
   overflow: hidden;
-  min-width: 170px;
+  min-width: 178px;
   min-height: 300px;
   margin: 4px;
 }
@@ -1015,6 +1015,13 @@ select#chapterSelect {
   }
 }
 @media (max-width: 400px) {
+  .main-item-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
   .manga-container__chitiet__left .manga-thumbnail {
     position: relative;
     width: 100%;

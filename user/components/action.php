@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $res = $tuongTac->TuongTac__AddOrUpdate($tuong_tac_noi_dung, $tuong_tac_loai, $chapter_id, $tai_khoan_id);
                 if ($res > 0) {
                     $newLikeCount = $truyen->Truyen__Increase_Liked_Count($truyen_id);
-                    echo $newLikeCount;
+                    echo number_format($newLikeCount);
                 } else {
                     $oldLikeCount = $truyen->Truyen__Get_Liked_Count($truyen_id);
-                    echo $oldLikeCount;
+                    echo number_format($oldLikeCount);
                 }
             }
         } elseif ($action === 'follow') {
@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $res = $tuongTac->TuongTac__AddOrUpdate($tuong_tac_noi_dung, $tuong_tac_loai, $chapter_id, $tai_khoan_id);
                 if ($res > 0) {
                     $newFollowCount = $truyen->Truyen__Increase_Followed_Count($truyen_id);
-                    echo $newFollowCount;
+                    echo number_format($newFollowCount);
                 } else {
                     $oldFollowCount = $truyen->Truyen__Get_Followed_Count($truyen_id);
-                    echo $oldFollowCount;
+                    echo number_format($oldFollowCount);
                 }
             }
         } else if ($action === 'view') {

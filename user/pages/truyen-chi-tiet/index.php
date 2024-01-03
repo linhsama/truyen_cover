@@ -71,14 +71,14 @@ $top = 0;
                             <div class="tab-group-1">
                                 <div class="truyen-thich">
                                     <div class="btn btn-sm color-0 background-7" onclick="likeTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
-                                        <i class="bx bx bx-book-heart"></i> Thích (<small id="thich-count"><?= $truyen__Get_By_Id->truyen_luot_thich ?></small>)
+                                        <i class="bx bx bx-book-heart"></i> Thích (<small id="thich-count"><?= number_format($truyen__Get_By_Id->truyen_luot_thich) ?></small>)
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-group-2">
                                 <div class="truyen-theo-doi">
                                     <div class="btn btn-sm color-0 background-6" onclick="followTruyen('<?= $truyen_id ?>', '<?= $chapter_id ?>')">
-                                        <i class="bx bx-book-bookmark"></i> Theo dõi (<small id="theo-doi-count"><?= $truyen__Get_By_Id->truyen_luot_theo_doi ?></small>)
+                                        <i class="bx bx-book-bookmark"></i> Theo dõi (<small id="theo-doi-count"><?= number_format($truyen__Get_By_Id->truyen_luot_theo_doi) ?></small>)
                                     </div>
                                 </div>
                             </div>
