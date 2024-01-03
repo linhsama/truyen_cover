@@ -25,5 +25,3 @@
     - Tài khoản user
         + username: user
         + password: user
-
-        
